@@ -1700,8 +1700,7 @@ def parse_args():
         'Command line interface for testing internet bandwidth using '
         'speedtest.net.\n'
         '------------------------------------------------------------'
-        '--------------\n'
-        'https://github.com/sivel/speedtest-cli')
+        '--------------\n')
 
     parser = ArgParser(description=description)
     # Give optparse.OptionParser an `add_argument` method for
