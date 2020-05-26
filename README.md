@@ -8,6 +8,8 @@ Original source from [speedtest-cli](https://github.com/sivel/speedtest-cli)
 ## Versions
 speedtest-cli works with Python 2.4-3.7
 
+![Python application](https://github.com/JMousqueton/speedtest-cli/workflows/Python%20application/badge.svg)
+
 ## Installation
 
 ### Fastest 🚀
