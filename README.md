@@ -1,21 +1,20 @@
-speedtest-cli
-=============
+# 🐢🐇 Speedtest-cli
 
 Python command line interface for testing internet bandwidth using
 speedtest.net
 
-Original source from https://github.com/sivel/speedtest-cli
+Original source from [speedtest-cli](https://github.com/sivel/speedtest-cli)
 
-# Versions
+## Versions
 speedtest-cli works with Python 2.4-3.7
 
-# Installation
+## Installation
 
-## Fastest
+### Fastest 🚀
 
 `curl -s https://raw.githubusercontent.com/jmousqueton/speedtest-cli/master/speedtest.py | python -`
 
-## Normal
+### Normal
 
 Just download (Like the way it used to be)
 
@@ -30,7 +29,7 @@ or
 `chmod +x speedtest-cli`
 
 
-### Usage 
+## Usage
 
     $ speedtest-cli -h
     usage: speedtest-cli [-h] [--no-download] [--no-upload] [--single] [--bytes]
