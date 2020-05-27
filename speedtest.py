@@ -686,6 +686,9 @@ def build_request(url, data=None, headers=None, bump='0', secure=False):
 
     """
 
+    printer('build_request input URL: %s' % url,
+            debug=True)
+
     if not headers:
         headers = {}
 
@@ -705,9 +708,31 @@ def build_request(url, data=None, headers=None, bump='0', secure=False):
                                  int(timeit.time.time() * 1000),
                                  bump)
 
+    urlparts = urlparse(final_url)
+    hostname = urlparts.hostname
+
+    dnslookup = socket.getaddrinfo(hostname, 0, 0, socket.SOCK_STREAM)
+    if dnslookup[0][0] == socket.AF_INET6:
+        hostaddr = '[' + dnslookup[0][4][0] + ']'
+    else:
+        hostaddr = dnslookup[0][4][0]
+
+    if urlparts.port:
+        hostport = ':' + str(urlparts.port)
+    else:
+        hostport = ''
+
+    urlparts = urlparts._replace(netloc=hostaddr + hostport)
+    final_url = urlparts.geturl()
+
     headers.update({
         'Cache-Control': 'no-cache',
+        'Host': hostname
     })
+
+    printer('build_request built: %s %s %s' % (final_url, data, headers),
+            debug=True)
+
 
     printer('%s %s' % (('GET', 'POST')[bool(data)], final_url),
             debug=True)
