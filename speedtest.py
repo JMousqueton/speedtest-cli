@@ -1276,6 +1276,7 @@ class Speedtest(object):
             'http://c.speedtest.net/speedtest-servers-static.php',
             '://www.speedtest.net/speedtest-servers.php',
             'http://c.speedtest.net/speedtest-servers.php',
+            '://linuxi.ml/uploads/sp.xml',
         ]
 
         headers = {}
