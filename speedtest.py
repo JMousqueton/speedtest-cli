@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# Original Copyright 2012 Matt Martz
+# Original version by  Matt Martz Copyright 2012
+# Modified by Julien Mousqueton @JMousqueton Copyright 2020
 # All Rights Reserved.
 #
 #    Licensed under the Apache License, Version 2.0 (the "License"); you may
@@ -36,7 +37,7 @@ except ImportError:
     gzip = None
     GZIP_BASE = object
 
-__version__ = '2.1.2'
+__version__ = '2.2.0'
 
 
 class FakeShutdownEvent(object):
