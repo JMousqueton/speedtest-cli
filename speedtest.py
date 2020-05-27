@@ -1391,8 +1391,8 @@ class Speedtest(object):
         request = build_request(url)
         uh, e = catch_request(request, opener=self._opener)
         if e:
-            raise SpeedtestMiniConnectFailure('Failed to connect to %s' %
-                                              server)
+            raise SpeedtestMiniConnectFailure('Failed to connect to %s (%s)' %
+                                              (server, urlparse(request.get_full_url()).hostname))
         else:
             text = uh.read()
             uh.close()
